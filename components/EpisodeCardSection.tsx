@@ -15,7 +15,31 @@ const EpisodeCardSection = () => {
       />
       <Query query={GET_EPISODES_WITH_NAME_QUERY}>
         {({ data, loading, error }: any) => {
-          if (loading) return <p>Loading...</p>;
+          if (loading)
+            return (
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-10 lg:mx-20">
+                <EpisodeCard name="loadingskeleton" />
+                <EpisodeCard name="loadingskeleton" />
+                <EpisodeCard name="loadingskeleton" />
+                <EpisodeCard name="loadingskeleton" />
+                <EpisodeCard name="loadingskeleton" />
+                <EpisodeCard name="loadingskeleton" />
+                <EpisodeCard name="loadingskeleton" />
+                <EpisodeCard name="loadingskeleton" />
+                <EpisodeCard name="loadingskeleton" />
+                <EpisodeCard name="loadingskeleton" />
+                <EpisodeCard name="loadingskeleton" />
+                <EpisodeCard name="loadingskeleton" />
+                <EpisodeCard name="loadingskeleton" />
+                <EpisodeCard name="loadingskeleton" />
+                <EpisodeCard name="loadingskeleton" />
+                <EpisodeCard name="loadingskeleton" />
+                <EpisodeCard name="loadingskeleton" />
+                <EpisodeCard name="loadingskeleton" />
+                <EpisodeCard name="loadingskeleton" />
+                <EpisodeCard name="loadingskeleton" />
+              </div>
+            );
           if (error) return <p>{error.message}</p>;
           const episodes = data?.episodes.results;
 
