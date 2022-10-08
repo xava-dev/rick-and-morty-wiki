@@ -9,7 +9,10 @@ const EpisodeCardSection = () => {
 
   return (
     <>
-      <SearchBar setSearch={setSearch} />
+      <SearchBar
+        setSearch={setSearch}
+        placeholder="Search episodes by name or code..."
+      />
       <Query query={GET_EPISODES_WITH_NAME_QUERY}>
         {({ data, loading, error }: any) => {
           if (loading) return <p>Loading...</p>;
@@ -19,8 +22,10 @@ const EpisodeCardSection = () => {
           return (
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-10 lg:mx-20">
               {episodes
-                .filter((episode: any) =>
-                  episode.name.toLowerCase().includes(search)
+                .filter(
+                  (episode: any) =>
+                    episode.name.toLowerCase().includes(search) ||
+                    episode.episode.toLowerCase().includes(search)
                 )
                 .map((episode: any, index: number) => {
                   return (

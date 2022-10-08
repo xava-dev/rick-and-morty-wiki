@@ -4,7 +4,6 @@ export const GET_EPISODES_WITH_NAME_QUERY = gql`
   query getEpisode {
     episodes {
       results {
-        id
         name
         episode
       }
@@ -14,7 +13,7 @@ export const GET_EPISODES_WITH_NAME_QUERY = gql`
 
 export const GET_EPISODES_WITH_CHARACTER_NAME_QUERY = gql`
   query {
-    characters(filter: { name: "Rick" }) {
+    characters {
       results {
         id
         name
