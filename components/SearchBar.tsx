@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const SearchBar = (props: any) => {
-  const { placeholder } = props;
+  const { placeholder, setSearch } = props;
   const [text, setText] = useState("");
 
   const handleChange = (e: any) => {
@@ -10,7 +10,7 @@ const SearchBar = (props: any) => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    props.setSearch(text);
+    setSearch(text);
   };
 
   return (
@@ -24,7 +24,7 @@ const SearchBar = (props: any) => {
       <input
         type="submit"
         value="Search"
-        className="h-12 bg-rm/50 px-6 rounded-r-md cursor-pointer hover:bg-rm/75 transition-all duration-200"
+        className="h-12 bg-rm px-6 rounded-r-md cursor-pointer hover:bg-rm/75 transition-all duration-200"
       />
     </form>
   );
