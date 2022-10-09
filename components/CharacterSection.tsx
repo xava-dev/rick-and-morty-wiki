@@ -1,4 +1,3 @@
-import EpisodeCard from "./EpisodeCard";
 import { GET_CHARACTERS_BY_NAME } from "../graphql/queries";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
@@ -28,24 +27,24 @@ export const CharacterDataWithSearch = (props: any) => {
 
   return (
     <div className="grid md:grid-cols-2 gap-4 my-10 lg:mx-20">
-      {characters?.map((character: any, index: number) => {
-        return (
-          <CharacterCard
-            key={index}
-            name={character.name}
-            status={character.status}
-            species={character.species}
-            type={character.type}
-            gender={character.gender}
-            origin={character.origin.name}
-            location={character.location.name}
-            image={character.image}
-          />
-        );
-      }) || (
-        <p className="mx-auto text-rm ">
-          No characters found. Try a different search.
-        </p>
+      {characters.length > 0 ? (
+        characters.map((character: any, index: number) => {
+          return (
+            <CharacterCard
+              key={index}
+              name={character.name}
+              status={character.status}
+              species={character.species}
+              type={character.type}
+              gender={character.gender}
+              origin={character.origin.name}
+              location={character.location.name}
+              image={character.image}
+            />
+          );
+        })
+      ) : (
+        <p className="text-rm">No characters found. Try a different search.</p>
       )}
     </div>
   );
