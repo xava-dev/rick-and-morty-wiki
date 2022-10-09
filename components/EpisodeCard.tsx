@@ -1,7 +1,7 @@
 const EpisodeCard = (props: any) => {
-  const { name, episode } = props;
+  const { name, episode, loading } = props;
 
-  if (name === "loadingskeleton")
+  if (loading)
     return (
       <div className="cursor-pointer bg-rm/10 p-6 rounded-md animate-pulse">
         <h2 className="text-xl font-bold bg-rm/20 animate-pulse w-full h-6 rounded-lg"></h2>
@@ -10,7 +10,7 @@ const EpisodeCard = (props: any) => {
     );
 
   return (
-    <div className="cursor-pointer bg-rm/10 hover:bg-rm/30 p-6 rounded-md">
+    <div className="cursor-pointer bg-rm/10 hover:bg-rm/30 p-6 rounded-md transition-all duration-200">
       <h2 className="text-xl font-bold text-rm">{name}</h2>
       <p className="text-rm/50">{episode}</p>
     </div>
