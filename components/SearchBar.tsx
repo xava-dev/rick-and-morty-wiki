@@ -1,7 +1,12 @@
 import { useState } from "react";
 
-const SearchBar = (props: any) => {
-  const { placeholder, setSearch } = props;
+const SearchBar = ({
+  placeholder,
+  setSearch,
+}: {
+  placeholder: string;
+  setSearch: any;
+}) => {
   const [text, setText] = useState("");
 
   const handleChange = (e: any) => {

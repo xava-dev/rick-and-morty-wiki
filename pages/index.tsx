@@ -8,7 +8,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Rick and Morty Wiki</title>
+        <title>Episodes | Rick and Morty Wiki</title>
         <meta
           name="description"
           content="Search episodes and characters from Rick and Morty"

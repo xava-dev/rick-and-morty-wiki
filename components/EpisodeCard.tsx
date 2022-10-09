@@ -1,6 +1,12 @@
-const EpisodeCard = (props: any) => {
-  const { name, episode, loading } = props;
-
+const EpisodeCard = ({
+  name,
+  episode,
+  loading,
+}: {
+  name: string;
+  episode: string;
+  loading: boolean;
+}) => {
   if (loading)
     return (
       <div className="cursor-pointer bg-rm/10 p-6 rounded-md animate-pulse">

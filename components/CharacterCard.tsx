@@ -1,15 +1,33 @@
 import Image from "next/image";
 
-const CharacterCard = (props: any) => {
-  const { name, status, species, type, origin, location, image, loading } =
-    props;
-
+const CharacterCard = ({
+  name,
+  status,
+  species,
+  type,
+  gender,
+  origin,
+  location,
+  image,
+  loading,
+}: {
+  name: string;
+  status: string;
+  species: string;
+  type: string;
+  gender: string;
+  origin: string;
+  location: string;
+  image: string;
+  loading: boolean;
+}) => {
   if (loading)
     return (
       <div className="cursor-pointer bg-rm/10 h-[300px] rounded-md animate-pulse">
         <div className="w-[300px] h-[300px] bg-rm/20"></div>
         <div className="flex flex-col p-6 mt-4 ml-[300px] -mt-[300px]">
           <h2 className="text-xl font-bold bg-rm/20 animate-pulse w-1/2 h-6 rounded-lg"></h2>
+          <p className="bg-rm/10 mt-2 animate-pulse w-1/6 h-4 rounded-md"></p>
           <p className="bg-rm/10 mt-2 animate-pulse w-1/6 h-4 rounded-md"></p>
           <p className="bg-rm/10 mt-2 animate-pulse w-1/6 h-4 rounded-md"></p>
           <p className="bg-rm/10 mt-2 animate-pulse w-1/6 h-4 rounded-md"></p>
@@ -48,6 +66,10 @@ const CharacterCard = (props: any) => {
         ) : (
           ""
         )}
+        <p className="text-rm/25 text-[10px] font-bold uppercase mt-2">
+          Gender
+        </p>
+        <p className="text-rm/75">{gender}</p>
         <p className="text-rm/25 text-[10px] font-bold uppercase mt-2">
           Origin
         </p>

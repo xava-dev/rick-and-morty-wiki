@@ -4,30 +4,24 @@ import SearchBar from "./SearchBar";
 import { useState } from "react";
 import { useQuery } from "@apollo/client";
 
-export const EpisodeDataWithSearch = (props: any) => {
-  const { search } = props;
-
-  const {
-    data: dataChar,
-    loading: loadingChar,
-    error: errorChar,
-  } = useQuery(GET_EPISODES_BY_CHARACTER, {
+export const EpisodeDataWithSearch = ({ search }: { search: string }) => {
+  const { data, loading, error } = useQuery(GET_EPISODES_BY_CHARACTER, {
     variables: { name: search },
   });
 
   const skeletonArray = Array.from(Array(20).keys());
 
-  if (loadingChar)
+  if (loading)
     return (
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-10 lg:mx-20">
-        {skeletonArray.map((episode: any, index: number) => {
-          return <EpisodeCard key={index} loading={true} />;
+        {skeletonArray.map((item: any, index: number) => {
+          return <EpisodeCard key={index} loading={true} name="" episode="" />;
         })}
       </div>
     );
-  if (errorChar) return <p>{errorChar?.message}</p>;
+  if (error) return <p>{error?.message}</p>;
 
-  const episodesByChar = dataChar?.characters.results[0]?.episode;
+  const episodesByChar = data?.characters.results[0]?.episode;
 
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-10 lg:mx-20">
@@ -37,6 +31,7 @@ export const EpisodeDataWithSearch = (props: any) => {
             key={index}
             name={episode.name}
             episode={episode.episode}
+            loading={false}
           />
         );
       }) || (

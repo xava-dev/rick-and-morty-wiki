@@ -8,7 +8,7 @@ const EpisodesWithCharacter: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Rick and Morty Wiki</title>
+        <title>Episodes by Characters | Rick and Morty Wiki</title>
         <meta
           name="description"
           content="Search episodes played by certain characters from Rick and Morty"
