@@ -1,17 +1,17 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import EpisodesSection from "../components/EpisodesSection";
 import NavigationTabs from "../components/NavigationTabs";
+import EpisodesByCharacterSection from "../components/EpisodesByCharacterSection";
 
-const Home: NextPage = () => {
+const EpisodesWithCharacter: NextPage = () => {
   return (
     <>
       <Head>
         <title>Rick and Morty Wiki</title>
         <meta
           name="description"
-          content="Search episodes and characters from Rick and Morty"
+          content="Search episodes played by certain characters from Rick and Morty"
         />
         <link rel="icon" href="/rickandmorty.png" />
       </Head>
@@ -26,10 +26,10 @@ const Home: NextPage = () => {
           />
         </div>
         <NavigationTabs />
-        <EpisodesSection />
+        <EpisodesByCharacterSection />
       </main>
     </>
   );
 };
 
-export default Home;
+export default EpisodesWithCharacter;
