@@ -10,7 +10,7 @@ const EpisodeCard = (props: any) => {
     );
 
   return (
-    <div className="bg-rm/10 hover:bg-rm/30 p-6 rounded-lg transition-all duration-200">
+    <div className="bg-rm/10 hover:bg-rm/20 p-6 rounded-lg transition-all duration-200">
       <h2 className="text-xl font-bold text-rm">{name}</h2>
       <p className="text-rm/50">{episode}</p>
     </div>

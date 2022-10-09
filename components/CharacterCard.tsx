@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { Simulate } from "react-dom/test-utils";
-import load = Simulate.load;
 
 const CharacterCard = (props: any) => {
   const { name, status, species, type, origin, location, image, loading } =
@@ -22,7 +20,7 @@ const CharacterCard = (props: any) => {
     );
 
   return (
-    <div className="flex flex-row bg-rm/10 hover:bg-rm/30 rounded-lg transition-all duration-200">
+    <div className="flex flex-row bg-rm/10 hover:bg-rm/20 rounded-lg transition-all duration-200">
       <Image
         src={image}
         width={300}
