@@ -61,7 +61,9 @@ export const EpisodeDataWithSearch = (props: any) => {
           />
         );
       }) || (
-        <p className="mx-auto">No results found. Try a different search.</p>
+        <p className="mx-auto text-rm">
+          No episodes found. Try a different search.
+        </p>
       )}
     </div>
   );

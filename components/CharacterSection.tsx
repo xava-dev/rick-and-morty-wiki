@@ -43,7 +43,9 @@ export const CharacterDataWithSearch = (props: any) => {
           />
         );
       }) || (
-        <p className="mx-auto">No results found. Try a different search.</p>
+        <p className="mx-auto text-rm ">
+          No characters found. Try a different search.
+        </p>
       )}
     </div>
   );

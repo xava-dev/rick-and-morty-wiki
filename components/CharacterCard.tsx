@@ -22,21 +22,42 @@ const CharacterCard = (props: any) => {
     );
 
   return (
-    <div className="flex flex-row cursor-pointer bg-rm/10 hover:bg-rm/30 rounded-md transition-all duration-200">
+    <div className="flex flex-row bg-rm/10 hover:bg-rm/30 rounded-lg transition-all duration-200">
       <Image
         src={image}
         width={300}
         height={300}
         alt={name}
-        className="rounded-l-md"
+        className="rounded-l-lg"
       />
-      <div className="flex flex-col p-8">
-        <h2 className="text-xl font-bold text-rm">{name}</h2>
-        <p className="text-rm/50">Status: {status}</p>
-        <p className="text-rm/50">Species: {species}</p>
-        {type ? <p className="text-rm/50">Type: {type}</p> : ""}
-        <p className="text-rm/50">Origin: {origin}</p>
-        <p className="text-rm/50">Location: {location}</p>
+      <div className="flex flex-col px-6 pt-4">
+        <h2 className="text-2xl font-bold text-rm">{name}</h2>
+        <p className="text-rm/25 text-[10px] font-bold uppercase mt-2">
+          Status
+        </p>
+        <p className="text-rm/75">{status}</p>
+        <p className="text-rm/25 text-[10px] font-bold uppercase mt-2">
+          Species
+        </p>
+        <p className="text-rm/75">{species}</p>
+        {type ? (
+          <>
+            <p className="text-rm/25 text-[10px] font-bold uppercase mt-2">
+              Type
+            </p>
+            <p className="text-rm/75">{type}</p>
+          </>
+        ) : (
+          ""
+        )}
+        <p className="text-rm/25 text-[10px] font-bold uppercase mt-2">
+          Origin
+        </p>
+        <p className="text-rm/75">{origin}</p>
+        <p className="text-rm/25 text-[10px] font-bold uppercase mt-2">
+          Location
+        </p>
+        <p className="text-rm/75">{location}</p>
       </div>
     </div>
   );

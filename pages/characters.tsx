@@ -18,7 +18,7 @@ const Characters: NextPage = () => {
       </Head>
 
       <main className="w-full flex flex-col justify-center px-6">
-        <div className="mx-auto my-8">
+        <div className="mx-auto mt-6 mb-4">
           <Image
             src="/rickandmorty.svg"
             width={600}
