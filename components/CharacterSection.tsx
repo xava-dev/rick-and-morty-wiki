@@ -4,9 +4,7 @@ import { useState } from "react";
 import { useQuery } from "@apollo/client";
 import CharacterCard from "./CharacterCard";
 
-export const CharacterDataWithSearch = (props: any) => {
-  const { search } = props;
-
+export const CharacterDataWithSearch = ({ search }: { search: string }) => {
   const { data, loading, error } = useQuery(GET_CHARACTERS_BY_NAME, {
     variables: { name: search },
   });
@@ -16,8 +14,21 @@ export const CharacterDataWithSearch = (props: any) => {
   if (loading)
     return (
       <div className="grid md:grid-cols-2 gap-4 my-10 lg:mx-20">
-        {skeletonArray.map((character: any, index: number) => {
-          return <CharacterCard key={index} loading={true} />;
+        {skeletonArray.map((item: any, index: number) => {
+          return (
+            <CharacterCard
+              key={index}
+              loading={true}
+              name=""
+              gender=""
+              image=""
+              origin=""
+              location=""
+              species=""
+              status=""
+              type=""
+            />
+          );
         })}
       </div>
     );
@@ -40,6 +51,7 @@ export const CharacterDataWithSearch = (props: any) => {
               origin={character.origin.name}
               location={character.location.name}
               image={character.image}
+              loading={false}
             />
           );
         })

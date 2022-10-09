@@ -2,17 +2,16 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import NavigationTabs from "../components/NavigationTabs";
-import EpisodesByCharacterSection from "../components/EpisodesByCharacterSection";
 import CharacterSection from "../components/CharacterSection";
 
 const Characters: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Rick and Morty Wiki</title>
+        <title>Characters | Rick and Morty Wiki</title>
         <meta
           name="description"
-          content="Search episodes played by certain characters from Rick and Morty"
+          content="Search characters from Rick and Morty"
         />
         <link rel="icon" href="/rickandmorty.png" />
       </Head>
