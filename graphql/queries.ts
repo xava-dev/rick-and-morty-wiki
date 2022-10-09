@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 export const GET_EPISODE_BY_NAME = gql`
-  query getEpisodeByName($name: String) {
+  query getEpisodeByName($name: String!) {
     episodes(filter: { name: $name }) {
       results {
         name
@@ -12,7 +12,7 @@ export const GET_EPISODE_BY_NAME = gql`
 `;
 
 export const GET_EPISODE_BY_CODE = gql`
-  query getEpisodeByCode($episode: String) {
+  query getEpisodeByCode($episode: String!) {
     episodes(filter: { episode: $episode }) {
       results {
         name
@@ -23,7 +23,7 @@ export const GET_EPISODE_BY_CODE = gql`
 `;
 
 export const GET_EPISODES_BY_CHARACTER = gql`
-  query getEpisodesByCharacter($name: String) {
+  query getEpisodesByCharacter($name: String!) {
     characters(filter: { name: $name }) {
       results {
         name
@@ -37,7 +37,7 @@ export const GET_EPISODES_BY_CHARACTER = gql`
 `;
 
 export const GET_CHARACTERS_BY_NAME = gql`
-  query getCharactersByName($name: String) {
+  query getCharactersByName($name: String!) {
     characters(filter: { name: $name }) {
       results {
         name
