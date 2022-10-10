@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import NavigationTabs from "../components/NavigationTabs";
 import CharacterSection from "../components/CharacterSection";
+import Logo from "../components/Logo";
 
 const Characters: NextPage = () => {
   return (
@@ -17,14 +17,7 @@ const Characters: NextPage = () => {
       </Head>
 
       <main className="w-full flex flex-col justify-center px-6">
-        <div className="mx-auto mt-6 mb-4">
-          <Image
-            src="/rickandmorty.svg"
-            width={600}
-            height={200}
-            alt="Rick and Morty logo"
-          />
-        </div>
+        <Logo />
         <NavigationTabs />
         <CharacterSection />
       </main>

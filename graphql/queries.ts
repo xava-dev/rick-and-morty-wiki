@@ -6,6 +6,7 @@ export const GET_EPISODE_BY_NAME = gql`
       results {
         name
         episode
+        air_date
       }
     }
   }
@@ -17,6 +18,7 @@ export const GET_EPISODE_BY_CODE = gql`
       results {
         name
         episode
+        air_date
       }
     }
   }
@@ -30,6 +32,7 @@ export const GET_EPISODES_BY_CHARACTER = gql`
         episode {
           name
           episode
+          air_date
         }
       }
     }
