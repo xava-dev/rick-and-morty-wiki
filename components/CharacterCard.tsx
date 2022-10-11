@@ -1,27 +1,27 @@
 import Image from "next/image";
 
 interface Character {
-  name: string;
-  status: string;
-  species: string;
-  type: string;
-  gender: string;
-  origin: string;
-  location: string;
-  image: string;
-  loading: boolean;
+  name?: string;
+  status?: string;
+  species?: string;
+  type?: string;
+  gender?: string;
+  origin?: string;
+  location?: string;
+  image?: string;
+  loading?: boolean;
 }
 
 const CharacterCard = ({
-  name,
-  status,
-  species,
-  type,
-  gender,
-  origin,
-  location,
-  image,
-  loading,
+  name = "",
+  status = "",
+  species = "",
+  type = "",
+  gender = "",
+  origin = "",
+  location = "",
+  image = "",
+  loading = false,
 }: Character) => {
   if (loading)
     return (

@@ -1,11 +1,16 @@
 interface Episode {
-  name: string;
-  episode: string;
-  airdate: string;
-  loading: boolean;
+  name?: string;
+  episode?: string;
+  airdate?: string;
+  loading?: boolean;
 }
 
-const EpisodeCard = ({ name, episode, airdate, loading }: Episode) => {
+const EpisodeCard = ({
+  name = "",
+  episode = "",
+  airdate = "",
+  loading = false,
+}: Episode) => {
   if (loading)
     return (
       <div className="cursor-pointer bg-rm/10 p-6 rounded-md animate-pulse">

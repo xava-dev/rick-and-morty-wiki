@@ -1,4 +1,4 @@
-import { GET_CHARACTERS_BY_NAME } from "../graphql/queries";
+import { GET_CHARACTERS_BY_NAME } from "../lib/queries";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 import { useQuery } from "@apollo/client";
@@ -27,20 +27,7 @@ export const CharacterDataWithSearch = ({ search }: { search: string }) => {
     return (
       <div className="grid md:grid-cols-2 gap-4 my-10 lg:mx-20">
         {skeletonArray.map((item: {}, index: number) => {
-          return (
-            <CharacterCard
-              key={index}
-              loading={true}
-              name=""
-              gender=""
-              image=""
-              origin=""
-              location=""
-              species=""
-              status=""
-              type=""
-            />
-          );
+          return <CharacterCard key={index} loading={true} />;
         })}
       </div>
     );
@@ -63,7 +50,6 @@ export const CharacterDataWithSearch = ({ search }: { search: string }) => {
               origin={character.origin.name}
               location={character.location.name}
               image={character.image}
-              loading={false}
             />
           );
         })
