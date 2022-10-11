@@ -1,3 +1,5 @@
+<img width="1638" alt="Schermafbeelding 2022-10-09 om 22 45 45" src="https://user-images.githubusercontent.com/104568148/194778706-e21363ec-c5c6-422b-95a2-83ef7a61365a.png">
+
 ## Getting Started
 First, install the dependencies:
 
