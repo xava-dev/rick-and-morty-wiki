@@ -1,5 +1,5 @@
 import EpisodeCard from "./EpisodeCard";
-import { GET_EPISODE_BY_NAME, GET_EPISODE_BY_CODE } from "../graphql/queries";
+import { GET_EPISODE_BY_NAME, GET_EPISODE_BY_CODE } from "../lib/queries";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 import { useQuery } from "@apollo/client";
@@ -34,15 +34,7 @@ export const EpisodeDataWithSearch = ({ search }: { search: string }) => {
     return (
       <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 my-10 lg:mx-20">
         {skeletonArray.map((item: {}, index: number) => {
-          return (
-            <EpisodeCard
-              key={index}
-              name=""
-              episode=""
-              airdate=""
-              loading={true}
-            />
-          );
+          return <EpisodeCard key={index} loading={true} />;
         })}
       </div>
     );
@@ -72,7 +64,6 @@ export const EpisodeDataWithSearch = ({ search }: { search: string }) => {
             name={episode.name}
             episode={episode.episode}
             airdate={episode.air_date}
-            loading={false}
           />
         );
       }) || (

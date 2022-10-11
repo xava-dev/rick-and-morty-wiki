@@ -1,5 +1,5 @@
 import EpisodeCard from "./EpisodeCard";
-import { GET_EPISODES_BY_CHARACTER } from "../graphql/queries";
+import { GET_EPISODES_BY_CHARACTER } from "../lib/queries";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 import { useQuery } from "@apollo/client";
